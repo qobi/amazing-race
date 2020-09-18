@@ -1,2 +1,2 @@
 # amazing-race
-Appendix for Amazing Race^TM: Robot Edition
+Appendix for The Amazing Race^TM: Robot Edition
