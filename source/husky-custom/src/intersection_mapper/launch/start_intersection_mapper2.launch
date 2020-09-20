@@ -1,0 +1,44 @@
+<!--
+  launch file
+  
+  ee0: 
+		<param name="hallway_width" value="3.5"/>
+		<param name="path_lengths" value="4.8"/>
+  msee2:
+		<param name="hallway_width" value="2.5"/>
+		<param name="path_lengths" value="2.4, 3.6"/>
+  phys2: 
+		<param name="hallway_width" value="3.0"/>
+		<param name="path_lengths" value="2.4, 3.6"/>
+-->
+
+<launch>
+  <node pkg="intersection_mapper" type="run_intersection_mapper2.py" name="intersection_mapper" output="screen">
+		<!-- occupancy grid parameters -->
+		<param name="obstacle_thresh"   value="51"/>			<!-- threshold to determine whether cell is "obstacle" -->
+		<!-- concentric circle parameters -->
+		<param name="ring_distances" value="1.2, 2.4, 3.6, 4.8, 6.0, 7.2"/>	<!-- distance from robot at which rings reside -->
+		<param name="points_on_ring" value="64"/>				<!-- number of points to check for in frontier -->
+		<param name="path_lengths" value="3.6, 6.0"/>				<!-- ring distances used to determine paths from intersections -->
+		<!-- obstacle search parameters -->
+		<param name="min_passage_size" value="1.2"/>			<!-- distance in meters of min_passage_size -->
+		<param name="max_dist_to_obstacle" value="3.0"/>		<!-- max distance (in meters) to search for obstacle -->
+		<param name="grid_cell_stride" value="2"/>				<!-- stride to use when checking if near an obstacle 
+																	 1 = 100% accurate, but slower; too large = may miss some obstacles, but faster -->
+		<!-- intersection parameters -->
+		<param name="intersection_tolerance" value="0.2"/>		<!-- radians of tolerance to classify intersections (0.1 rad = 5.7 deg) -->
+		<param name="min_dist_between_intersections" value="2.0"/> <!-- min distance between intersections -->
+		<param name="hallway_width" value="3.0"/>	 			<!-- hallway width -->
+		<!-- intersection graph parameters -->
+		<param name="in_intersection_dist" value="0.5"/> 		<!-- how close you have to be to an intersection to be considered 'in' it -->
+		<param name="in_path_dist" value="3.0"/> 				<!-- how close you have to be to a path to have 'used' it -->
+		<!-- background, intersection refinement parameters -->
+		<param name="anchor_drift_dist" value="2.4"/>			<!-- max dist intersection can drift from original detection -->
+		<param name="refinement_resolution" value="0.4"/>		<!-- resolution of intersection refinement  -->
+		<param name="refinement_dist" value="5.0"/>				<!-- max dist robot can be from intersection to refine it -->
+		<!-- visualization parameters -->
+		<param name="show_intersection_map" value="True"/>		<!-- show intersection map -->
+		<param name="show_requested_routes" value="True"/>		<!-- show where the requested routes are -->
+  </node>
+</launch>
+

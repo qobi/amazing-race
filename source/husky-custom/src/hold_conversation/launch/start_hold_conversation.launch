@@ -1,0 +1,25 @@
+<!--
+  explore launch file
+-->
+
+<launch>
+  <node pkg="hold_conversation" type="run_hold_conversation5_tro.py" name="hold_conversation" output="screen">
+		<!-- hold_conversation params -->
+		<param name="parser" value="/home/jjohanse/nltk_data/stanford-parser-full-2018-10-17/"/>	<!-- parser path -->
+		<param name="models" value="/home/jjohanse/nltk_data/stanford-parser-full-2018-10-17/stanford-parser-3.9.2-models.jar"/>	<!-- model path -->
+		<param name="model_path" value="/home/jjohanse/nltk_data/stanford-parser-full-2018-10-17/edu/stanford/nlp/models/lexparser/englishPCFG.ser.gz"/>	<!--  -->
+		<param name="conversation_medium" value="speech"/>	<!-- Options: 'text' (via terminal) or 'speech' -->
+		<param name="listen_timeout"   value="5.0"/>		<!-- How long in seconds the robot waits for a response -->
+		<param name="num_instructions" value="11"/>			<!-- number of instructions to gather from human -->
+		<param name="num_repeat" value="2"/>				<!-- number of times to ask human to repeat response before giving up -->
+		<param name="debug" value="False"/>		     		<!-- flag indicating whether to print extra stuff -->
+  </node>
+</launch>
+
+<!--
+rosservice call /hold_conversation/conversationContent 'get_directions' 'the staircase'
+rosservice call /hold_conversation/command 'start'
+rosservice call /hold_conversation/command 'stop'
+-->
+
+

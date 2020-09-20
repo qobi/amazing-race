@@ -1,0 +1,25 @@
+TODO
+
+(1) Add an "coming_towards_me" module that is also used to determine approachable people.  This will rely on the LIDAR.
+(2) Add an "determine_optimal_person_to_approach" module that selects the optimal person to approach from the list of candidates.
+(3) Using the actual HW, determine how fast things run.  Speed things up as necessary.  
+(4) Using the actual HW, tune the hyperparameters to get desired results.
+
+COMMENTS
+(a)	If we want the approachable-person-detector running constantly, it will necessitate an overhaul.  The following criteria would need
+	to be considered:
+		- camera shake (as it relates to tracking)
+		- moving camera (as it relates to tracking, detecting stationary people, people approaching us, and people walking by/beside/in front of us)
+	Those will introduce a large amount of complexity, most of which be difficult to program and not be publishable.  
+		For example, the approachable person node will need to know whether the vehicle is moving/turning.  As it moves/turns, people in the field 
+		of view move location.  They may (in the global space) be stationary, but appear to move by virtue of the vehicle moving/turning.  The algorithm
+		would need to compensate for this.  That would be non-trivial, especially since the transformation would be a function of the distance of 
+		the object to the camera.  (When traveling forward, objects in the far-field will not be much affected by the robots movements; whereas
+		objects in the near field are severely affected.)
+		Because of this, it is likely that the algorithm would need to have two modes (detect_while_driving; detect_while_stopped).  Each mode would
+		need its own set of hyperparameters.  Each would need to be tuned.
+
+
+
+
+

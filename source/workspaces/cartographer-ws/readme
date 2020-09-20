@@ -1,0 +1,5 @@
+To build this workspace you use the command 
+
+	catkin_make_isolated --install --use-ninja
+
+I would refer you to the document entitled howto-get-cartographer-working.txt for more info.

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- <param name="robot_description" command="cat '/home/jjohanse/husky_env/src/husky_pur22/husky_pur22_description/urdf/husky_pur22_description.urdf.xacro'"/> -->
+  <!-- <param name="robot_description" command="cat '/home/jjohanse/husky_env/src/husky/husky_description/urdf/husky.urdf.xacro'"/> -->'
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find husky_viz)/rviz/wizard.rviz" output="screen"/>
+  <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find husky_viz)/rviz/robot.rviz" output="screen"/> -->
+  <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d /home/jjohanse/husky_env/src/husky/husky_viz/rviz/robot.rviz" output="screen"/> -->
+</launch>

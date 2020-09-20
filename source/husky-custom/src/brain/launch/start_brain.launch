@@ -1,0 +1,11 @@
+<!--
+  launch file
+-->
+
+<launch>
+  <node pkg="brain" type="run_brain.py" name="brain" output="screen">
+		<!-- debug parameters -->
+		<param name="debug" value="False"/>		     			<!-- print extra debug messages -->
+  </node>
+</launch>
+

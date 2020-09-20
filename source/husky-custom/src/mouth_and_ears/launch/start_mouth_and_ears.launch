@@ -1,0 +1,21 @@
+<!--
+	launch file
+-->
+
+<launch>
+  <node pkg="mouth_and_ears" type="run_mouth_and_ears.py" name="mouth_and_ears" output="screen">
+		<!-- audio streaming parameters -->
+		<param name="microphone" value="yeti"/>			<!-- microphone to use (choices: "default", "yeti") -->
+		<param name="rate" value="44100"/>				<!-- something -->
+		<param name="streaming_limit" value="55000"/>	<!-- something -->
+		<param name="chunk" value="4410"/>				<!-- something -->
+		<param name="silence_timeout" value="30"/>		<!-- something -->
+  </node>
+</launch>
+
+<!--
+	export GOOGLE_APPLICATION_CREDENTIALS=/home/jjohanse/robot-slang/husky-custom/src/dialog/src/Dialog.json
+	source /home/jjohanse/robot-slang/husky-custom/devel/setup.bash 
+-->
+
+

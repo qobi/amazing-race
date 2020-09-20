@@ -1,0 +1,51 @@
+<!--
+  explore launch file
+-->
+
+<launch>
+  <node pkg="approach_person" type="run_approach_person_tro.py" name="approach_person" output="screen">
+		<!-- camera params -->
+		<param name="frame_width" value="1920"/>
+		<param name="frame_height" value="1080"/>
+		<!-- yolo object detector -->
+		<param name="darknet_model_file" value="/home/jjohanse/robot-slang/darknet/cfg/yolov3.cfg"/>
+		<param name="darknet_weights_file" value="/home/jjohanse/robot-slang/darknet/cfg/yolov3.weights"/>
+		<param name="darknet_meta_file" value="/home/jjohanse/robot-slang/darknet/cfg/coco.data"/>
+		<param name="darknet_thresh" value="0.2"/>
+		<param name="darknet_hier_thresh" value="0.2"/>
+		<param name="darknet_nms" value="0.4"/>
+		<param name="input_width" value="416"/>
+		<param name="input_height" value="416"/>
+		<param name="gpu_id" value="0"/>
+		<!-- map_obj_to_3d -->
+		<param name="pointcloud_max_dist" value="25.0"/>   <!-- filters out points beyond this x-dist (in front of robot) -->
+		<param name="pointcloud_min_dist" value="0.0"/>    <!-- filters out points before this x-dist (behind robot) -->
+		<param name="pointcloud_min_height" value="0.0"/>  <!-- filters out points below this z-height (e.g. on ground) -->
+		<param name="pointcloud_max_height" value="2.0"/>  <!-- filters out points above this z-height (e.g. on ceiling) -->
+		<!-- general detection params-->
+		<param name="person_flag_dist" value="10.0"/>	   <!-- max dist someone may be for approachPerson to inform other nodes of their presence -->
+		<!-- tracker -->
+		<!-- walking speeds.  slow: 1.25 m/s.  avg: 1.39 m/s.  brisk: 1.8 m/s.  source: wikipedia -->
+		<param name="same_object_thresh" value="2.5"/>  <!-- if object moves < this m/s, it is same object -->
+		<param name="tracker_num_seconds" value="1.5"/> <!-- number of seconds of history to keep -->
+		<param name="forward_projection" value="0.5"/>  <!-- number of seconds for forward projection -->
+		<!-- approachable person detector -->
+		<param name="stationary_thresh" value="0.3"/>   <!-- rate at which the person has to be moving to be "stationary" -->
+		<param name="move_towards_thresh" value="1.0"/> <!-- rate at which the person has to be moving towards us to be "approaching" us -->
+		<!-- approach person navigation params -->
+		<param name="engage_dist" value="7.0"/>         <!-- how far away from an approaching person should we engage them? -->
+		<param name="introduce_dist" value="2.0"/>      <!-- how far from a person should we introduce ourselves? -->
+		<param name="stop_dist" value="0.8"/>           <!-- how far from the person the robot should stop -->
+		<param name="engage_statement" value="Excuse me!  Excuse me!  Can you help me?"/> 
+														<!-- text robot will say when it is engage_dist away from person -->
+		<param name="introduce_statement" value="Hello!  My name is Hosh.  I would like to ask you for help."/>
+														<!-- text robot will say when it is introduce_dist away from person -->
+		<param name="new_goal_dist" value="0.5"/>       <!-- distance person moves from our goal before issuing new goal -->
+		<!-- debug params -->
+		<param name="debug" value="False"/>         <!-- how far away from an approaching person should we engage them? -->
+  </node>
+</launch>
+
+<!-- Send command to approach people 
+	rostopic pub /approach_person/command std_msgs/String app_person
+-->

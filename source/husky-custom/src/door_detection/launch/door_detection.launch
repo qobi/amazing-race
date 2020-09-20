@@ -1,0 +1,17 @@
+<!--
+  door detection launch file
+-->
+
+<launch>
+  <node pkg="door_detection" type="door_detect.py" name="door_detection" output="screen">
+		<param name="door_box_area_min" value="5000"/>			<!-- min area threshold for door bounding box -->
+		<param name="door_box_area_max" value="1900000"/>			<!-- max area threshold for door bounding box -->
+		<param name="inter_door_dist"         value="1.0"/>                   <!-- threshold for door detections belong to same door -->
+                <param name="door_min_dist"     value="0.5"/>                   <!-- min threshold for door distance -->
+                <param name="door_max_dist"     value="5.0"/>                   <!-- max threshold for door distance -->
+                <param name="door_min_height"     value="-0.5"/>                   <!-- min threshold for door height -->
+                <param name="door_max_height"     value="2.0"/>                   <!-- max threshold for door height --> 
+                <param name="door_score"          value="10" />                   <!-- confidence threshold for door detections -->
+  </node>
+</launch>
+

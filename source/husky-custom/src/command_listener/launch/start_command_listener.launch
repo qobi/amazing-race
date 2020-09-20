@@ -1,0 +1,12 @@
+<!--
+  explore launch file
+-->
+
+<launch>
+  <node pkg="command_listener" type="run_command_listener.py" name="command_listener" output="screen">
+		<!-- params -->
+		<param name="wake_word" value="hosh"/>			<!-- wake word to trigger execution of a command -->
+		<param name="debug"     value="True"/>			<!-- debug flag -->
+  </node>
+</launch>
+

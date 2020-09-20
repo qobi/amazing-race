@@ -1,0 +1,16 @@
+string direction
+int16 number
+-----------------
+float32 x_close
+float32 y_close
+float32 x_far
+float32 y_far
+float32 z_ori
+float32 w_ori
+bool valid
+string direction
+float32 door_x_close
+float32 door_y_close
+float32 door_x_far
+float32 door_y_far
+

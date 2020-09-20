@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package>
+  <name>rviz_marker_publisher</name>
+  <version>0.0.0</version>
+  <description>The rviz_marker_publisher package</description>
+
+  <maintainer email="jjohanse@todo.todo">jjohanse</maintainer>
+
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>visualization_msgs</build_depend>
+  
+  <run_depend>rospy</run_depend>
+  <run_depend>visualization_msgs</run_depend>
+
+  <export>
+  </export>
+</package>

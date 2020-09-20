@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package>
+  <name>mouth_and_ears</name>
+  <version>0.0.1</version>
+  <description>Synthesizes speech and performs speech-to-text</description>
+  <maintainer email="jjohanse@purdue.edu">Jared Johansen</maintainer>
+
+  <license>TODO</license>
+  <url type="website">None</url>
+  
+  <author email="jjohanse@purdue.edu">Jared Johansen</author>
+  
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>rospy</build_depend>
+  <build_depend>std_msgs</build_depend>
+
+  <run_depend>rospy</run_depend>
+  <run_depend>std_msgs</run_depend>
+
+</package>
+

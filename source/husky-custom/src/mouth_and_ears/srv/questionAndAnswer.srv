@@ -1,0 +1,4 @@
+string question
+int64 get_answer
+---
+string answer

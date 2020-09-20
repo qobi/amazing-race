@@ -1,0 +1,11 @@
+<!--
+  wander launch file
+-->
+
+<launch>
+  <node pkg="wander" type="run_wander2.py" name="wander" output="screen">
+		<param name="goal_update_dist" value="2.5"/>   		<!-- dist to goal before issuing new goal -->
+		<param name="robot_stuck_timeout" value="6.0"/>   	<!-- num secs robot is stationary to be classified as "stuck" -->
+  </node>
+</launch>
+

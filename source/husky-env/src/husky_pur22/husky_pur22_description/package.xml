@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>husky_pur22_description</name>
+  <version>0.0.0</version>
+  <description>The husky_pur22_description package</description>
+
+  <maintainer email="jcook@clearpathrobotics.com">Josh Cook</maintainer>
+
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <exec_depend>husky_description</exec_depend>
+
+  <export>
+  </export>
+</package>

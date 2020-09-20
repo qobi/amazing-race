@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+<!-- TOP PLATE -->
+  <link name="pur22_top_plate_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://husky_pur22_description/meshes/PUR22_TOP_PLATE.dae" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://husky_pur22_description/meshes/PUR22_TOP_PLATE.dae" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="pur22_top_plate_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="pur22_top_plate_link"/>
+    <origin xyz="0.0812 0 0.225" rpy="0 0 0"/>
+  </joint>
+
+<!-- Camera Rail -->
+  <link name="pur22_camera_rail_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://husky_pur22_description/meshes/PUR22_CAMERA_RAIL.dae" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://husky_pur22_description/meshes/PUR22_CAMERA_RAIL.dae" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="pur22_camera_rail_joint" type="fixed">
+    <parent link="pur22_top_plate_link" />
+    <child link="pur22_camera_rail_link"/>
+    <origin xyz="0.33749 0 $(optenv CAMERA_RAIL_MOUNT_HEIGHT 0)" rpy="0 0 0"/>
+  </joint>
+
+<!-- Camera Mount -->
+  <link name="pur22_camera_mount_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://husky_pur22_description/meshes/PUR22_CAMERA_MOUNT.dae" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://husky_pur22_description/meshes/PUR22_CAMERA_MOUNT.dae" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="pur22_camera_mount_joint" type="fixed">
+    <parent link="pur22_top_plate_link" />
+    <child link="pur22_camera_mount_link"/>
+    <origin xyz="0.34749 0 $(optenv CAMERA_TROLLY_MOUNT_HEIGHT 0)" rpy="0 0 0"/>
+  </joint>
+
+
+<!-- Velodyne VLP16 -->
+  <link name="velodyne">
+  <visual>
+     <origin xyz="0 0 0" rpy="0 0 1.5708"/>
+      <geometry>
+        <mesh filename="package://husky_pur22_description/meshes/vlp16.dae" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://husky_pur22_description/meshes/vlp16.dae" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="velodyne_joint" type="fixed">
+    <parent link="pur22_camera_mount_link" />
+    <child link="velodyne"/>
+    <origin xyz="0.11 0 0.06052" rpy="0 0 0"/>
+  </joint>
+
+<!-- Axis PTZ  -->
+  <link name="axis">
+  <visual>
+      <geometry>
+        <mesh filename="package://husky_pur22_description/meshes/ptz.dae" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://husky_pur22_description/meshes/ptz.dae" />
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="axis_joint" type="fixed">
+    <parent link="pur22_camera_mount_link" />
+    <child link="axis"/>
+    <origin xyz="0.186 0 -0.115" rpy="0 1.57 0"/>
+  </joint>
+</robot>

@@ -1,0 +1,10 @@
+<!--
+  launch file
+-->
+
+<launch>
+  <node pkg="door_navigation" type="door_navigate.py" name="door_navigation" output="screen">
+     <param name="door_dist" value="2.0"/> <!-- how close robot needs to be to a door to drive up to it-->
+  </node>
+</launch>
+
