@@ -1,5 +1,5 @@
 # amazing-race
-Appendix for The Amazing Race^TM: Robot Edition
+Appendix for The Amazing Race<sup>TM</sup>: Robot Edition
 
 Videos of three complete trials, one in each building.
 
