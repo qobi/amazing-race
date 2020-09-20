@@ -18,3 +18,6 @@ source/workspaces/cartographer-ws/src/CMakeLists.txt
 should be symlinks to
 
 /opt/ros/kinetic/share/catkin/cmake/toplevel.cmake
+
+The PDF viewer built into github will only render the first 50 pages if you
+click on appendix.pdf. Download to view the whole 160 page document.
