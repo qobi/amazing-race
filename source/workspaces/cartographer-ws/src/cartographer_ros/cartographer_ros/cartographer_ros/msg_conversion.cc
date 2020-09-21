@@ -14,6 +14,15 @@
  * limitations under the License.
  */
 
+/*
+	*** IMPORTANT NOTICE ***
+	In accordance with item (b) in the Redistribution clause in the LICENSE, we 
+	post the following notice that we have modified this file.
+	Comments are found below in the code.
+	A small history motivating the change can be found here: 
+	https://github.com/cartographer-project/cartographer/issues/1498
+ */
+ 
 #include "cartographer_ros/msg_conversion.h"
 
 #include <cmath>
